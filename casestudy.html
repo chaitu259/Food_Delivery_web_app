@@ -1,0 +1,167 @@
+Html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Delicious Food Delivered to Your Doorstep</h1>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="#">Menu</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#biryani">Biryani</a></li>
+                        <li><a href="#starters">Starters</a></li>
+                        <li><a href="#continental">Continental Dishes</a></li>
+                        <li><a href="#desserts">Desserts</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button onclick="openCart()">View Cart (<span id="cart-count">0</span>)</button>
+    </header>
+
+    <!-- Biryani Section -->
+    <section id="biryani" class="menu">
+        <h2>Biryani</h2>
+        <div class="food-container">
+            <div class="food-item" data-name="Chicken Biryani" data-price="250">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoIycguxFgTpIN3L00tYQhJ2WkypXj5w_QkQ&s" alt="Chicken Biryani">
+                <h3>Chicken Biryani</h3>
+                <p>250</p>
+                <button onclick="addToCart('Chicken Biryani', 250)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-name="Mutton Biryani" data-price="350">
+                <img src="https://sinfullyspicy.com/wp-content/uploads/2023/12/1200-by-1200-images-2.jpg" alt="Mutton Biryani">
+                <h3>Mutton Biryani</h3>
+                <p>350</p>
+                <button onclick="addToCart('Mutton Biryani', 350)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-name="Veg Biryani" data-price="200">
+                <img src="https://infinitybiryani.com/wp-content/uploads/2024/09/Mix-Veg-Biryani-1-800x800.webp" alt="Veg Biryani">
+                <h3>Veg Biryani</h3>
+                <p>200</p>
+                <button onclick="addToCart('Veg Biryani', 200)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Starters Section -->
+    <section id="starters" class="menu">
+        <h2>Starters</h2>
+        <div class="food-container">
+            <div class="food-item" data-name="Paneer Tikka" data-price="200">
+                <img src="https://www.krumpli.co.uk/wp-content/uploads/2024/12/Paneer-Tikka-Kebabs-2-1200-735x735.jpg" alt="Paneer Tikka" >
+                <h3>Paneer Tikka</h3>
+                <p>200</p>
+                <button onclick="addToCart('Paneer Tikka', 200)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-name="Chicken 65" data-price="250">
+                <img src="https://swatisani.net/kitchen/wp-content/uploads/2014/11/1200px-Chicken_65_Dish.jpg" alt="Chicken 65">
+                <h3>Chicken 65</h3>
+                <p>250</p>
+                <button onclick="addToCart('Chicken 65', 250)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-name="Spring Rolls" data-price="200">
+                <img src="https://s.lightorangebean.com/media/20240914144947/Thai-Veggie-Spring-Rolls_done.png" alt="Spring Rolls">
+                <h3>Spring Rolls</h3>
+                <p>200</p>
+                <button onclick="addToCart('Spring Rolls', 200)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Continental Dishes Section -->
+    <section id="continental" class="menu">
+        <h2>Continental Dishes</h2>
+        <div class="food-container">
+            <div class="food-item" data-name="Pizza" data-price="180">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHoML_RWrNhS3xbZNeWhpj9jjsyG7Ex-43aw&s" alt="Pizza">
+                <h3>Pizza</h3>
+                <p>180</p>
+                <button onclick="addToCart('Pizza', 180)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-name="Burger" data-price="150">
+                <img src="https://www.foodandwine.com/thmb/DI29Houjc_ccAtFKly0BbVsusHc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg" alt="Burger">
+                <h3>Burger</h3>
+                <p>150</p>
+                <button onclick="addToCart('Burger', 150)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-name="Pasta" data-price="200">
+                <img src="https://www.spicebangla.com/wp-content/uploads/2024/08/Spicy-Pasta-recipe-optimised-scaled.webp" alt="Pasta">
+                <h3>Pasta</h3>
+                <p>200</p>
+                <button onclick="addToCart('Pasta', 200)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desserts Section -->
+    <section id="desserts" class="menu">
+        <h2>Desserts</h2>
+        <div class="food-container">
+            <div class="food-item" data-name="Chocolate Cake" data-price="50">
+                <img src="https://sugargeekshow.com/wp-content/uploads/2023/10/easy_chocolate_cake_slice.jpg" alt="Chocolate Cake">
+                <h3>Chocolate Cake</h3>
+                <p>50</p>
+                <button onclick="addToCart('Chocolate Cake', 50)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-name="Gulab Jamun" data-price="30">
+                <img src="https://www.chefadora.com/_next/image?url=https%3A%2F%2Fchefadora.b-cdn.net%2F003f0f0351967a7cb6212a8d9bfaf889_f956154e73.jpg&w=3840&q=75" alt="Gulab Jamun">
+                <h3>Gulab Jamun</h3>
+                <p>30</p>
+                <button onclick="addToCart('Gulab Jamun', 30)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-name="Ice Cream" data-price="40">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ76Kngh_mkWfemCNURXqfhJG-Yr9Wps4Zo7A&s" alt="Ice Cream">
+                <h3>Ice Cream</h3>
+                <p>40</p>
+                <button onclick="addToCart('Ice Cream', 40)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    
+    <div id="cart-modal">
+        <h2>🛒 Your Cart</h2>
+        <div id="cart-items"></div>
+        <p>Total: <span id="cart-total">₹0</span></p>
+        
+        <h3>Enter Your Details</h3>
+        <div class="customer-details">
+            <label for="customer-name">Name:</label>
+            <input type="text" id="customer-name" placeholder="Enter your name">
+    
+            <label for="customer-address">Address:</label>
+            <textarea id="customer-address" placeholder="Enter your address"></textarea>
+    
+            <label for="customer-phone">Phone Number:</label>
+            <input type="text" id="customer-phone" placeholder="Enter your phone number">
+    
+            <label for="payment-method">Select Payment Method:</label>
+            <select id="payment-method">
+                <option value="Cash on Delivery">Cash on Delivery</option>
+                <option value="UPI">UPI</option>
+                <option value="Credit/Debit Card">Credit/Debit Card</option>
+            </select>
+        </div>
+        <br>
+        <button onclick="placeOrder()">Place Order</button>
+        <button onclick="closeCart()">Close</button>
+    </div>
+    <div id="cart-overlay" onclick="closeCart()"></div>
+
+    
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@fooddelivery.com</p>
+        <p>Phone: 1234567890</p>
+    </section>
+</body>
+</html>
